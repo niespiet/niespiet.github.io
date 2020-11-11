@@ -2,34 +2,84 @@
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html,
         body {
             background-color: #eeeeee;
+            margin: 0;
+            scroll-behavior: smooth;
         }
 
-        #title {
+        header {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
-        .item {
+        header h1 {
             margin: auto;
-            font-family: 'Dancing Script', serif;
+            font-family: 'Berkshire Swash', serif;
             font-size: 92px;
             z-index: 10;
+            text-shadow: 0 0 5px #cccccc;
             /* flex: 1; */
+        }
+
+        a.tonext {
+            padding: 0;
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+            font-size: 48px;
+            color: #ccc;
+        }
+
+        a.tonext:hover {
+            color: red;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            font-family: 'Merriweather', serif;
+            font-size: 25px;
+        }
+
+        section address {
+            margin: 2em auto;
+        }
+
+        section p {
+            line-height: 1.6;
+        }
+
+        section img {
+            /* display: block; */
+            margin: auto;
+            flex: 1;
+            padding: 1em;
+        }
+
+        .firstcharacter {
+            float: left;
+            font-size: 350%;
+            line-height: 85%;
+            width: .7em;
+            padding-right: .1em;
         }
 
         .red {
             color: red;
-        }
-
-        body {
-            margin: 0;
         }
 
         .snowflake {
@@ -175,6 +225,27 @@
 
 <body>
 
+    <header>
+        <h1>Niespiet redt het <span class="red">S</span>interklaasfeest</h1>
+        <a href="#niespiet" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
+    </header>
+
+    <section id="niespiet">
+        <address>Door Eva Hadermann</address>
+        <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de Sint.
+            Misschien wel zijn beste helper. Hij
+            houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle Pieten. Maar telkens
+            wanneer
+            het
+            kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten en te niezen dat hij
+            bijna
+            omver
+            valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij heeft dus nog nooit mee op de
+            daken
+            geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg
+            jammer.</p>
+        <img src="niespiet.svg" alt="Niespiet" />
+    </section>
 
 
     <div class="snowflakes" aria-hidden="true">
@@ -208,10 +279,6 @@
         <div class="snowflake">
             ❄
         </div>
-    </div>
-
-    <div id="title">
-        <div class="item">Niespiet redt het <span class="red">S</span>interklaasfeest</div>
     </div>
 
 </body>

@@ -12,6 +12,19 @@
             background-color: #eeeeee;
             margin: 0;
             scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            html {
+                font-size: 22px;
+            }
         }
 
         header {
@@ -25,7 +38,7 @@
         header h1 {
             margin: auto;
             font-family: 'Berkshire Swash', serif;
-            font-size: 92px;
+            font-size: 400%;
             z-index: 10;
             text-shadow: 0 0 5px #cccccc;
             /* flex: 1; */
@@ -36,7 +49,7 @@
             position: absolute;
             bottom: 1em;
             left: 1em;
-            font-size: 48px;
+            font-size: 200%;
             color: #ccc;
         }
 
@@ -52,7 +65,7 @@
             flex-direction: column;
             margin: auto;
             font-family: 'Merriweather', serif;
-            font-size: 25px;
+            font-size: 100%;
         }
 
         section address {
@@ -63,11 +76,14 @@
             line-height: 1.6;
         }
 
+        section div {}
+
         section img {
-            /* display: block; */
             margin: auto;
-            flex: 1;
             padding: 1em;
+            overflow: auto;
+            flex: 1;
+            max-height: 100%;
         }
 
         .firstcharacter {
@@ -233,18 +249,15 @@
     <section id="niespiet">
         <address>Door Eva Hadermann</address>
         <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de Sint.
-            Misschien wel zijn beste helper. Hij
-            houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle Pieten. Maar telkens
-            wanneer
-            het
-            kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten en te niezen dat hij
-            bijna
-            omver
-            valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij heeft dus nog nooit mee op de
-            daken
-            geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg
-            jammer.</p>
-        <img src="niespiet.svg" alt="Niespiet" />
+            Misschien
+            wel zijn beste helper. Hij houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle
+            Pieten.
+            Maar telkens wanneer het kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten
+            en te
+            niezen dat hij bijna omver valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij
+            heeft dus
+            nog nooit mee op de daken geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg jammer.</p>
+        <img src="niespiet.svg" alt="Niespiet" width="100%" />
     </section>
 
 

@@ -38,6 +38,7 @@
             font-size: 2rem;
             z-index: 10;
             text-shadow: 0 0 5px #cccccc;
+            text-align: center;
         }
 
         a.tonext {
@@ -59,8 +60,9 @@
             height: 100%;
             
             display: flex;
+            flex-direction: column;
             /* flex-direction: column; */
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             font-family: 'Merriweather', serif;
             font-size: 0.6rem;
             margin: auto;
@@ -79,7 +81,7 @@
         .wrap {
             display: flex;
             flex-wrap: wrap;
-            width:  clamp(800px, 1500px, 80vw);
+            width:  clamp(800px, 1300px, 80vw);
             margin: auto;
         }
 
@@ -92,9 +94,9 @@
 
         .content {
             margin: auto;
-            flex-basis: clamp(500px, 1100px, 40vw);
-            min-width: clamp(500px, 1100px, 40vw);
-            max-width:  clamp(500px, 1100px, 40vw);
+            flex-basis: clamp(500px, 900px, 90vw);
+            min-width: clamp(500px, 900px, 90vw);
+            max-width:  clamp(500px, 900px, 90vw);
         }
 
         section img {

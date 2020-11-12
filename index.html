@@ -12,36 +12,32 @@
             background-color: #eeeeee;
             margin: 0;
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: clamp(1.6rem, 5vw, 2.5rem);
         }
 
-        @media screen and (min-width: 320px) {
-            html {
-                font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-            }
+        p {
+            position: relative;
+            z-index: 100;
         }
 
-        @media screen and (min-width: 1000px) {
-            html {
-                font-size: 22px;
-            }
+        img {
+            position: relative;
+            z-index: 100;
         }
 
         header {
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             position: relative;
         }
 
         header h1 {
             margin: auto;
             font-family: 'Berkshire Swash', serif;
-            font-size: 400%;
+            font-size: 2rem;
             z-index: 10;
             text-shadow: 0 0 5px #cccccc;
-            /* flex: 1; */
         }
 
         a.tonext {
@@ -49,7 +45,7 @@
             position: absolute;
             bottom: 1em;
             left: 1em;
-            font-size: 200%;
+            font-size: 1rem;
             color: #ccc;
         }
 
@@ -58,38 +54,61 @@
         }
 
         section {
+            position: relative;
             width: 100%;
             height: 100%;
-            max-width: 800px;
+            
             display: flex;
-            flex-direction: column;
-            margin: auto;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
             font-family: 'Merriweather', serif;
-            font-size: 100%;
+            font-size: 0.6rem;
+            margin: auto;
         }
 
         section address {
-            margin: 2em auto;
+            margin: 2em 0;
+            text-align: center;
         }
 
         section p {
             line-height: 1.6;
+            padding: 0 1em;
         }
 
-        section div {}
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width:  clamp(800px, 1500px, 80vw);
+            margin: auto;
+        }
+
+        .image {
+            flex-basis: clamp(200px, 400px, 30vw);
+            min-width: clamp(200px, 400px, 30vw);
+            max-width:  clamp(200px, 400px, 30vw);
+            margin: auto;
+        }
+
+        .content {
+            margin: auto;
+            flex-basis: clamp(500px, 1100px, 40vw);
+            min-width: clamp(500px, 1100px, 40vw);
+            max-width:  clamp(500px, 1100px, 40vw);
+        }
 
         section img {
             margin: auto;
-            padding: 1em;
-            overflow: auto;
-            flex: 1;
-            max-height: 100%;
+            /* margin: 1em; */
+            /* overflow: auto; */
+            /* flex: 1; */
+            /* max-height: 100%; */
         }
 
         .firstcharacter {
             float: left;
-            font-size: 350%;
-            line-height: 85%;
+            font-size: 1.9rem;
+            line-height: 1;
             width: .7em;
             padding-right: .1em;
         }
@@ -100,7 +119,7 @@
 
         .snowflake {
             color: white;
-            font-size: 1em;
+            font-size: 0.1em;
             font-family: Arial;
             text-shadow: 0 0 1px #000000;
             z-index: 0;
@@ -247,18 +266,44 @@
     </header>
 
     <section id="niespiet">
-        <address>Door Eva Hadermann</address>
-        <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de Sint.
-            Misschien
-            wel zijn beste helper. Hij houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle
-            Pieten.
-            Maar telkens wanneer het kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten
-            en te
-            niezen dat hij bijna omver valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij
-            heeft dus
-            nog nooit mee op de daken geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg jammer.</p>
-        <img src="niespiet.svg" alt="Niespiet" width="100%" />
+        <div class="wrap">
+            <div class="image">
+                <img src="niespiet.svg" alt="Niespiet" width="100%" />
+            </div>
+            <div class="content">
+                <address>Door Eva Hadermann</address>
+                <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de Sint. Misschien
+                    wel zijn beste helper. Hij houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle Pieten.
+                    Maar telkens wanneer het kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten en te
+                    niezen dat hij bijna omver valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij heeft dus
+                    nog nooit mee op de daken geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg jammer.</p>
+            </div>
+        </div>
+        <a href="#iedereen-is-ziek" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
     </section>
+
+
+<section id="iedereen-is-ziek">
+    <div class="wrap">
+        <div class="content">
+            <p>
+                Maar dit jaar gebeurt er iets geks. Niespiet wordt al ziek tijdens de warme dagen van de lente. De Sint
+                en de Pieten maken zich zorgen. Ze horen op het nieuws dat mensen over de hele wereld zo ziek worden als
+                Niespiet. Wat is er toch aan de hand?
+            </p>
+            <p>
+                En hoewel Niespiet snel beter is, kunnen de voorbereidingen voor het Sinterklaasfeest niet verdergaan
+                zoals gepland. Want één voor één kunnen de andere Pieten niet meer uit bed. Samen met de Hoofdpiet
+                bedenkt de Sint een plan om het Sinterklaasfeest zo goed mogelijk verder te kunnen voorbereiden. Alle
+                Pieten worden in kleine groepjes verdeeld over het kasteel en werken daar verder aan hun eigen taak.
+                (Hoofdpiet en de Sint blijven in de kamers van de Sint. De bakpieten blijven op het verdiep van de
+                keuken, de postpieten bij de postadeling, de zorgpieten in de ziekenboeg, de waspieten bij de waruimte,
+                de stalpieten kamperen bij het paard en de dakenpieten verblijven in de turnzaal.)
+                Enkel Niespiet, die nu niet meer ziek lijkt te worden, mag van kamer naar kamer om te helpen waar nodig.
+            </p>
+        </div>
+    </div>
+</section>
 
 
     <div class="snowflakes" aria-hidden="true">

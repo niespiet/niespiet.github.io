@@ -4,48 +4,6 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-size: clamp(2.3rem, 5vw, 2.5rem);
-  /* font-size: clamp(1rem, 0.5454545455rem + 2.2727272727vw, 2rem); */
-}
-
-/* header {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  scroll-behavior: smooth;
-} */
-
-section h1 {
-  margin: auto;
-  font-family: "Berkshire Swash", serif;
-  font-size: 2rem;
-  z-index: 10;
-  text-shadow: 0 0 5px #cccccc;
-  text-align: center;
-  /* flex: 1; */
-  /* min-width: 100%; */
-}
-
-section address {
-    margin: 2em 0;
-    text-align: center;
-    font-size: 0.6rem;
-  }
-
-a.tonext {
-  padding: 2em;
-  /* position: absolute; */
-  /* bottom: 1em;
-  left: 50vw; */
-  margin: auto;
-  
-  font-size: 1rem;
-  color: #ccc;
-}
-
-a.tonext:hover {
-  color: red;
 }
 
 section {
@@ -60,9 +18,35 @@ section {
   margin: auto;
 }
 
+section h1 {
+  margin: auto;
+  font-family: "Berkshire Swash", serif;
+  font-size: 2rem;
+  z-index: 10;
+  text-shadow: 0 0 5px #cccccc;
+  text-align: center;
+}
+
+section address {
+  margin: 2em 0;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
 section p {
   line-height: 1.6;
   padding: 0 1em;
+}
+
+a.tonext {
+  padding-bottom: 4em;
+  margin: auto;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+a.tonext:hover {
+  color: red;
 }
 
 .wrap {
@@ -92,10 +76,6 @@ section p {
 
 section img {
   margin: auto;
-  /* margin: 1em; */
-  /* overflow: auto; */
-  /* flex: 1; */
-  /* max-height: 100%; */
 }
 
 .firstcharacter {

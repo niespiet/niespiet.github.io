@@ -6,269 +6,23 @@
         href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        html,
-        body {
-            background-color: #eeeeee;
-            margin: 0;
-            scroll-behavior: smooth;
-            font-size: clamp(2.2rem, 5vw, 2.5rem);
-        }
-
-        p {
-            position: relative;
-            z-index: 100;
-        }
-
-        img {
-            position: relative;
-            z-index: 100;
-        }
-
-        header {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            position: relative;
-        }
-
-        header h1 {
-            margin: auto;
-            font-family: 'Berkshire Swash', serif;
-            font-size: 2rem;
-            z-index: 10;
-            text-shadow: 0 0 5px #cccccc;
-            text-align: center;
-        }
-
-        a.tonext {
-            padding: 0;
-            position: absolute;
-            bottom: 1em;
-            left: 1em;
-            font-size: 1rem;
-            color: #ccc;
-        }
-
-        a.tonext:hover {
-            color: red;
-        }
-
-        section {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            /* height: 100%; */
-            /* min-height: clamp(800px, 120vh, 1300px); */
-            
-            display: flex;
-            flex-direction: column;
-            font-family: 'Merriweather', serif;
-            font-size: 0.6rem;
-            margin: auto;
-        }
-
-        section address {
-            margin: 2em 0;
-            text-align: center;
-        }
-
-        section p {
-            line-height: 1.6;
-            padding: 0 1em;
-        }
-
-        .wrap {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: stretch;
-            flex-grow: 1;
-            height: 100%;
-            width:  clamp(680px, 100vw, 1300px);
-            margin: auto;
-            justify-content: center;
-        }
-        
-        .image {
-            /* flex-basis: clamp(200px, 30vw, 400px); */
-            min-width: clamp(200px, 30vw, 400px);
-            max-width:  clamp(200px, 30vw, 400px);
-            margin: auto;
-        }
-
-        .content {
-            margin: auto;
-            /* flex-basis: clamp(480px, 70vw, 900px); */
-            min-width: clamp(480px, 70vw, 900px);
-            max-width:  clamp(480px, 70vw, 900px);
-        }
-
-        section img {
-            margin: auto;
-            /* margin: 1em; */
-            /* overflow: auto; */
-            /* flex: 1; */
-            /* max-height: 100%; */
-        }
-
-        .firstcharacter {
-            float: left;
-            font-size: 1.9rem;
-            line-height: 1;
-            padding-right: .1em;
-        }
-
-        .red {
-            color: red;
-        }
-
-        .snowflake {
-            color: white;
-            font-size: 0.1em;
-            font-family: Arial;
-            text-shadow: 0 0 1px #000000;
-            z-index: 0;
-        }
-
-        @-webkit-keyframes snowflakes-fall {
-            0% {
-                top: -10%
-            }
-
-            100% {
-                top: 100%
-            }
-        }
-
-        @-webkit-keyframes snowflakes-shake {
-            0% {
-                -webkit-transform: translateX(0px);
-                transform: translateX(0px)
-            }
-
-            50% {
-                -webkit-transform: translateX(80px);
-                transform: translateX(80px)
-            }
-
-            100% {
-                -webkit-transform: translateX(0px);
-                transform: translateX(0px)
-            }
-        }
-
-        @keyframes snowflakes-fall {
-            0% {
-                top: -10%
-            }
-
-            100% {
-                top: 100%
-            }
-        }
-
-        @keyframes snowflakes-shake {
-            0% {
-                transform: translateX(0px)
-            }
-
-            50% {
-                transform: translateX(80px)
-            }
-
-            100% {
-                transform: translateX(0px)
-            }
-        }
-
-        .snowflake {
-            position: fixed;
-            top: -10%;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            cursor: default;
-            -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-            -webkit-animation-duration: 10s, 3s;
-            -webkit-animation-timing-function: linear, ease-in-out;
-            -webkit-animation-iteration-count: infinite, infinite;
-            -webkit-animation-play-state: running, running;
-            animation-name: snowflakes-fall, snowflakes-shake;
-            animation-duration: 10s, 3s;
-            animation-timing-function: linear, ease-in-out;
-            animation-iteration-count: infinite, infinite;
-            animation-play-state: running, running
-        }
-
-        .snowflake:nth-of-type(0) {
-            left: 1%;
-            -webkit-animation-delay: 0s, 0s;
-            animation-delay: 0s, 0s
-        }
-
-        .snowflake:nth-of-type(1) {
-            left: 10%;
-            -webkit-animation-delay: 1s, 1s;
-            animation-delay: 1s, 1s
-        }
-
-        .snowflake:nth-of-type(2) {
-            left: 20%;
-            -webkit-animation-delay: 6s, .5s;
-            animation-delay: 6s, .5s
-        }
-
-        .snowflake:nth-of-type(3) {
-            left: 30%;
-            -webkit-animation-delay: 4s, 2s;
-            animation-delay: 4s, 2s
-        }
-
-        .snowflake:nth-of-type(4) {
-            left: 40%;
-            -webkit-animation-delay: 2s, 2s;
-            animation-delay: 2s, 2s
-        }
-
-        .snowflake:nth-of-type(5) {
-            left: 50%;
-            -webkit-animation-delay: 8s, 3s;
-            animation-delay: 8s, 3s
-        }
-
-        .snowflake:nth-of-type(6) {
-            left: 60%;
-            -webkit-animation-delay: 6s, 2s;
-            animation-delay: 6s, 2s
-        }
-
-        .snowflake:nth-of-type(7) {
-            left: 70%;
-            -webkit-animation-delay: 2.5s, 1s;
-            animation-delay: 2.5s, 1s
-        }
-
-        .snowflake:nth-of-type(8) {
-            left: 80%;
-            -webkit-animation-delay: 1s, 0s;
-            animation-delay: 1s, 0s
-        }
-
-        .snowflake:nth-of-type(9) {
-            left: 90%;
-            -webkit-animation-delay: 3s, 1.5s;
-            animation-delay: 3s, 1.5s
-        }
-    </style>
+    <link rel="stylesheet" href="snowflakes.css">
+    <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Niespiet redt het <span class="red">S</span>interklaasfeest</h1>
-        <a href="#niespiet" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
-    </header>
+    <section>
+        <div class="wrap">
+            <div class="content">
+                <h1>Niespiet redt het <span class="red">S</span>interklaasfeest</h1>
+                <address>Door Eva Hadermann</address>
+            </div>
+        </div>
+        <a href="#niespiet" class="tonext"><i class="fa
+        fa-arrow-circle-down"></i></a>
+
+    </section>
 
     <section id="niespiet">
         <div class="wrap">
@@ -276,88 +30,84 @@
                 <img src="niespiet.svg" alt="Niespiet" width="100%" />
             </div>
             <div class="content">
-                <address>Door Eva Hadermann</address>
-                <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de Sint. Misschien
-                    wel zijn beste helper. Hij houdt van het Sinterklaasfeest. Hij werkt het hele jaar lang het hardste van alle Pieten.
-                    Maar telkens wanneer het kouder wordt en het Sinterklaasfeest dichterbij komt, begint hij zo hard te hoesten en te
-                    niezen dat hij bijna omver valt en hij niets anders kan doen dan een zakdoek voor zijn neus houden. Hij heeft dus
-                    nog nooit mee op de daken geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg jammer.</p>
+                <p><span class="firstcharacter">K</span>ennen jullie Niespiet al? Niespiet is één van de helpers van de
+                    Sint. Misschien wel zijn beste helper. Hij houdt van het Sinterklaasfeest. Hij werkt het hele jaar
+                    lang het hardste van alle Pieten. Maar telkens wanneer het kouder wordt en het Sinterklaasfeest
+                    dichterbij komt, begint hij zo hard te hoesten en te niezen dat hij bijna omver valt en hij niets
+                    anders kan doen dan een zakdoek voor zijn neus houden. Hij heeft dus nog nooit mee op de daken
+                    geklommen om de pakjes te verdelen. En dat vindt Niespiet heel erg jammer. </p>
             </div>
         </div>
         <a href="#iedereen-is-ziek" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
     </section>
 
-
-<section id="iedereen-is-ziek">
-    <div class="wrap">
-        <div class="content">
-            <p>
-                <span class="firstcharacter">M</span>aar dit jaar gebeurt er iets geks. Niespiet wordt al ziek tijdens de warme dagen
-                van de lente. De Sint en de Pieten maken zich zorgen. Ze horen op het nieuws dat mensen over de hele wereld zo ziek
-                worden als Niespiet. Wat is er toch aan de hand?
-            </p>
-            <p>
-                En hoewel Niespiet snel beter is, kunnen de voorbereidingen voor het Sinterklaasfeest niet verdergaan
-                zoals gepland. Want één voor één kunnen de andere Pieten niet meer uit bed. Samen met de Hoofdpiet
-                bedenkt de Sint een plan om het Sinterklaasfeest zo goed mogelijk verder te kunnen voorbereiden. Alle
-                Pieten worden in kleine groepjes verdeeld over het kasteel en werken daar verder aan hun eigen taak.
-                (Hoofdpiet en de Sint blijven in de kamers van de Sint. De bakpieten blijven op het verdiep van de
-                keuken, de postpieten bij de postafdeling, de zorgpieten in de ziekenboeg, de waspieten bij de wasruimte,
-                de stalpieten kamperen bij het paard en de dakenpieten verblijven in de turnzaal.)
-                Enkel Niespiet, die nu niet meer ziek lijkt te worden, mag van kamer naar kamer om te helpen waar nodig.
-            </p>
+    <section id="iedereen-is-ziek">
+        <div class="wrap">
+            <div class="content">
+                <p> <span class="firstcharacter">M</span>aar dit jaar gebeurt er iets geks. Niespiet wordt al ziek
+                    tijdens de warme dagen van de lente. De Sint en de Pieten maken zich zorgen. Ze horen op het nieuws
+                    dat mensen over de hele wereld zo ziek worden als Niespiet. Wat is er toch aan de hand? </p>
+                <p> En hoewel Niespiet snel beter is, kunnen de voorbereidingen voor het Sinterklaasfeest niet
+                    verdergaan zoals gepland. Want één voor één kunnen de andere Pieten niet meer uit bed. Samen met de
+                    Hoofdpiet bedenkt de Sint een plan om het Sinterklaasfeest zo goed mogelijk verder te kunnen
+                    voorbereiden. Alle Pieten worden in kleine groepjes verdeeld over het kasteel en werken daar verder
+                    aan hun eigen taak. (Hoofdpiet en de Sint blijven in de kamers van de Sint. De bakpieten blijven op
+                    het verdiep van de keuken, de postpieten bij de postafdeling, de zorgpieten in de ziekenboeg, de
+                    waspieten bij de wasruimte, de stalpieten kamperen bij het paard en de dakenpieten verblijven in de
+                    turnzaal.) Enkel Niespiet, die nu niet meer ziek lijkt te worden, mag van kamer naar kamer om te
+                    helpen waar nodig. </p>
+            </div>
         </div>
-    </div>
-    <a href="#geen-feest" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
-</section>
+        <a href="#geen-feest" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
+    </section>
 
-<section id="geen-feest">
-    <div class="wrap">
-        <div class="content">
-            <p>
-                <span class="firstcharacter">E</span>nkele weken voor het Sinterklaasfeest liggen de meeste Pieten ziek in bed. De
-                Zorgpieten hebben het erg druk. De Sint probeert de overige Pieten zoveel mogelijk moed in te spreken. Maar wanneer ook
-                Hoofdpiet ziek wordt, geeft de Sint het op. Hij roept de Sint Niespiet bij zich.
-            </p>
-            <p>
-                &ldquo;Beste Niespiet, ik heb besloten om het Sinterklaasfeest niet door te laten gaan dit jaar&rdquo;, zegt de Sint treurig. &ldquo;Ik
-                wil je bedanken voor al je harde werk, maar zonder de andere Pieten lukt het ons niet om alles tijdig klaar te krijgen.
-                Bovendien blijven mensen overal ter wereld ziek worden en moeten we voorzichtig zijn. Ik krijg zelfs brieven van
-                kinderen die vragen om dit jaar toch maar niet langs te komen. Als ik mijn verjaardag niet met alle kinderen kan vieren,
-                dan vier ik hem liever niet.&rdquo;
-            </p>
-            <p>
-                Niespiet neemt één van de brieven op het bureau van de Sint:
-            </p>
+    <section id="geen-feest">
+        <div class="wrap">
+            <div class="content">
+                <p> <span class="firstcharacter">E</span>nkele weken voor het Sinterklaasfeest liggen de meeste Pieten
+                    ziek in bed. De Zorgpieten hebben het erg druk. De Sint probeert de overige Pieten zoveel mogelijk
+                    moed in te spreken. Maar wanneer ook Hoofdpiet ziek wordt, geeft de Sint het op. Hij roept de Sint
+                    Niespiet bij zich. </p>
+                <p> &ldquo;Beste Niespiet, ik heb besloten om het Sinterklaasfeest niet door te laten gaan dit
+                    jaar&rdquo;, zegt de Sint treurig. &ldquo;Ik wil je bedanken voor al je harde werk, maar zonder de
+                    andere Pieten lukt het ons niet om alles tijdig klaar te krijgen. Bovendien blijven mensen overal
+                    ter wereld ziek worden en moeten we voorzichtig zijn. Ik krijg zelfs brieven van kinderen die vragen
+                    om dit jaar toch maar niet langs te komen. Als ik mijn verjaardag niet met alle kinderen kan vieren,
+                    dan vier ik hem liever niet.&rdquo; </p>
+                <p> Niespiet neemt één van de brieven op het bureau van de Sint: </p>
+            </div>
         </div>
-    </div>
-    <a href="#brief" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
-</section> 
-<section id="brief">
-    <div class="wrap">
-        <div class="content">
+        <a href="#brief" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
+    </section>
 
-            <p><i>
-                    Liefste Sinterklaas,<br><br>
-
-                    Hopelijk gaat alles goed met u. Ik ben altijd zo blij wanneer u langskomt en kijk telkens het hele
-                    jaar uit naar het Sinterklaasfeest.<br><br>
-
-                    Maar omdat mijn papa snel ziek wordt, moeten we erg voorzichtig zijn met het ontvangen van bezoek. U
-                    brengt me altijd de leukste cadeautjes, maar dit jaar wil ik eigenlijk alleen maar dat mijn papa
-                    gezond blijft.<br><br>
-
-                    U mag daarom dit jaar mijn huisje overslaan.<br><br>
-
-                    Lieve groetjes,<br>
-
-                    Emma</i>
-            </p>
+    <section id="brief">
+        <div class="wrap">
+            <div class="content">
+                <p><i> Liefste Sinterklaas,<br><br> Hopelijk gaat alles goed met u. Ik ben altijd zo blij wanneer u
+                        langskomt en kijk telkens het hele jaar uit naar het Sinterklaasfeest.<br><br> Maar omdat mijn
+                        papa snel ziek wordt, moeten we erg voorzichtig zijn met het ontvangen van bezoek. U brengt me
+                        altijd de leukste cadeautjes, maar dit jaar wil ik eigenlijk alleen maar dat mijn papa gezond
+                        blijft.<br><br> U mag daarom dit jaar mijn huisje overslaan.<br><br> Lieve groetjes,<br>
+                        Emma</i> </p>
+            </div>
         </div>
-    </div>
-</section>
+        <a href="#niespiet-werkt-zich-te-pletter" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
+    </section>
 
-
+    <section id="niespiet-werkt-zich-te-pletter">
+        <div class="wrap">
+            <div class="content">
+                <p><span class="firstcharacter">H</span>ij begrijpt nu waarom de Sint zijn verjaardag dit jaar wil
+                    overslaan. Toch wil Niespiet niet zomaar opgeven. Er moet een manier zijn om het Sinterklaasfeest
+                    toch te kunnen laten doorgaan. Bovendien is heeft hij zich nog nooit zo fit gevoeld in deze periode
+                    van het jaar. Zo begint hij nog harder te werken.</p>
+                <p>Hij loopt van de ene Pietenpost naar de andere om brieven te sorteren, speculaas te bakken, pakjes te
+                    maken, de Sintenkleding te strijken en het paard te verzorgen. Tussendoor loopt hij zo vaak hij kan
+                    langs de zieke Pieten om hen wat op te vrolijken. En vlak voor hij naar bed gaat, glipt hij nog even
+                    binnen in de gymzaal van de Dakenpieten en oefent er zijn klim- en klauterkunsten.</p>
+            </div>
+        </div>
+    </section>
 
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">

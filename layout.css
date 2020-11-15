@@ -3,7 +3,7 @@ body {
   background-color: #eeeeee;
   margin: 0;
   scroll-behavior: smooth;
-  font-size: clamp(2.3rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 section {
@@ -38,8 +38,16 @@ section p {
   padding: 0 1em;
 }
 
+section quot {
+    line-height: 1.6;
+    display: block;
+    font-style: italic;
+    margin: 1rem;
+    white-space: pre-line;
+}
+
 a.tonext {
-  padding-bottom: 4em;
+  padding-bottom: 2em;
   margin: auto;
   font-size: 1rem;
   color: #ccc;
@@ -61,17 +69,18 @@ a.tonext:hover {
 }
 
 .image {
-  flex-basis: clamp(200px, 30vw, 400px);
-  min-width: clamp(200px, 30vw, 400px);
-  max-width: clamp(200px, 30vw, 400px);
+  flex-basis: clamp(200px, 30rem, 400px);
+  min-width: clamp(200px, 30rem, 400px);
+  max-width: clamp(200px, 30rem, 400px);
   margin: auto;
 }
 
 .content {
   margin: auto;
-  flex-basis: clamp(480px, 70vw, 900px);
-  min-width: clamp(480px, 70vw, 900px);
-  max-width: clamp(480px, 70vw, 900px);
+  flex-basis: clamp(480px, 25rem, 800px);
+  /* min-width: clamp(480px, 30rem, 900px); */
+  /* max-width: clamp(480px, 30rem, 900px); */
+  width: clamp(480px, 25rem, 800px);
 }
 
 section img {
@@ -88,3 +97,58 @@ section img {
 .red {
   color: red;
 }
+
+header {
+  z-index: 1000;
+  position: fixed;
+  left: 85%;
+  display: flex;
+  background: white;
+}
+
+header a {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  justify-content: center;
+  margin: auto;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 0.5rem;
+  text-decoration: none;
+}
+
+header i {
+  align-items: center;
+}
+
+header a:hover {
+  background-color: #000;
+  color: white;
+}
+
+header img {
+    width: 1rem;
+}
+
+footer {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 1em;
+    color: #ccc;
+}
+
+
+
+/* .facebook {
+  
+  color: black;
+}
+
+.twitter {
+  background: white;
+  color: black;
+} */

@@ -1,55 +1,58 @@
-html,
+html {
+  /* font-size: 18px; */
+  font-size: clamp(100%, 100% + 0.666vw, 150%); 
+}
+
 body {
   background-color: #eeeeee;
   margin: 0;
   scroll-behavior: smooth;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  min-width: clamp(360px, 100vw, 900px);
 }
 
 section {
   position: relative;
   width: 100%;
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   font-family: "Merriweather", serif;
-  font-size: 0.6rem;
+  font-size: 0.8em;
   margin: auto;
+  z-index: 100;
 }
 
 section h1 {
   margin: auto;
   font-family: "Berkshire Swash", serif;
-  font-size: 2rem;
-  z-index: 10;
+  font-size: calc(2rem + 1vw);
   text-shadow: 0 0 5px #cccccc;
   text-align: center;
 }
 
 section address {
-  margin: 2em 0;
+  margin: 2rem 0;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 1rem;
 }
 
 section p {
   line-height: 1.6;
-  padding: 0 1em;
+  /* padding: 0 1rem; */
 }
 
 section quot {
     line-height: 1.6;
     display: block;
     font-style: italic;
-    margin: 1rem;
+    margin: 0 2rem;
     white-space: pre-line;
 }
 
 a.tonext {
-  padding-bottom: 2em;
+  padding-bottom: 2rem;
   margin: auto;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #ccc;
 }
 
@@ -65,22 +68,31 @@ a.tonext:hover {
   height: 100%;
   margin: auto;
   justify-content: center;
-  padding: 2em;
+  /* margin: 0 2rem; */
+  flex-basis: clamp(360px, 80vw, 100%);
+  min-width: clamp(360px, 80vw, 100%);
+  max-width: clamp(360px, 80vw, 100%);
 }
 
 .image {
-  flex-basis: clamp(200px, 30rem, 400px);
-  min-width: clamp(200px, 30rem, 400px);
-  max-width: clamp(200px, 30rem, 400px);
+  /* flex-basis: clamp(200px, 20vw, 400px);
+  min-width: clamp(200px, 20vw, 400px);
+  max-width: clamp(200px, 20vw, 400px); */
+  padding: 2rem 0;
   margin: auto;
+}
+
+section img {
+  width: clamp(200px - 2rem, 20vw, 400px);
+  height: 75vh;
 }
 
 .content {
   margin: auto;
-  flex-basis: clamp(480px, 25rem, 800px);
-  /* min-width: clamp(480px, 30rem, 900px); */
-  /* max-width: clamp(480px, 30rem, 900px); */
-  width: clamp(480px, 25rem, 800px);
+  padding: 0 2rem;
+  flex-basis: clamp(360px - 2rem, 70vw, 800px);
+  min-width: clamp(360px - 2rem, 70vw, 800px);
+  max-width: clamp(360px - 2rem, 70vw, 800px);
 }
 
 section img {
@@ -89,9 +101,9 @@ section img {
 
 .firstcharacter {
   float: left;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   line-height: 1;
-  padding-right: 0.1em;
+  padding-right: 0.25rem;
 }
 
 .red {
@@ -101,7 +113,7 @@ section img {
 header {
   z-index: 1000;
   position: fixed;
-  left: 85%;
+  right: min(320px, 15%);
   display: flex;
   background: white;
 }
@@ -109,12 +121,12 @@ header {
 header a {
   display: flex;
   align-items: center;
-  width: 1rem;
-  height: 1rem;
+  width: 1.75rem;
+  height: 1.75rem;
   justify-content: center;
   transition: all 0.3s ease;
   color: black;
-  font-size: 0.5rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -135,7 +147,7 @@ footer {
     position: fixed;
     z-index: 1000;
     left: 50%;
-    bottom: 1em;
+    bottom: 1rem;
     color: #ccc;
 }
 

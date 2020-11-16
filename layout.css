@@ -1,6 +1,6 @@
 html {
   /* font-size: 18px; */
-  font-size: clamp(100%, 100% + 0.666vw, 150%); 
+  font-size: clamp(100%, 100% + 0.666vw, 150%);
 }
 
 body {
@@ -42,15 +42,15 @@ section p {
 }
 
 section quot {
-    line-height: 1.6;
-    display: block;
-    font-style: italic;
-    margin: 0 2rem;
-    white-space: pre-line;
+  line-height: 1.6;
+  display: block;
+  font-style: italic;
+  margin: 0 2rem;
+  white-space: pre-line;
 }
 
 a.tonext {
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   margin: auto;
   font-size: 1.5rem;
   color: #ccc;
@@ -78,13 +78,14 @@ a.tonext:hover {
   /* flex-basis: clamp(200px, 20vw, 400px);
   min-width: clamp(200px, 20vw, 400px);
   max-width: clamp(200px, 20vw, 400px); */
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   margin: auto;
 }
 
 section img {
+  /* FIXME! */
   width: clamp(200px - 2rem, 20vw, 400px);
-  height: 75vh;
+  height: max(200px, 50vh);
 }
 
 .content {
@@ -116,6 +117,7 @@ header {
   right: min(320px, 15%);
   display: flex;
   background: white;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 header a {
@@ -140,25 +142,10 @@ header a:hover {
 }
 
 header img {
-    width: 1rem;
+  width: 100%;
 }
 
-footer {
-    position: fixed;
-    z-index: 1000;
-    left: 50%;
-    bottom: 1rem;
-    color: #ccc;
+header img:hover {
+  -webkit-filter: invert(1); /* safari 6.0 - 9.0 */
+  filter: invert(1);
 }
-
-
-
-/* .facebook {
-  
-  color: black;
-}
-
-.twitter {
-  background: white;
-  color: black;
-} */

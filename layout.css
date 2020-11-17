@@ -88,6 +88,10 @@ section img {
   height: max(200px, 50vh);
 }
 
+section img.fullwidth {
+  width: 70vw;
+}
+
 .content {
   margin: auto;
   padding: 0 2rem;
@@ -105,10 +109,11 @@ section img {
   font-size: 2.5rem;
   line-height: 1;
   padding-right: 0.25rem;
+  font-weight: 700;
 }
 
 .red {
-  color: red;
+  color: #c21212;
 }
 
 header {
@@ -142,7 +147,7 @@ header a:hover {
 }
 
 header img {
-  width: 100%;
+  width: 80%;
 }
 
 header img:hover {

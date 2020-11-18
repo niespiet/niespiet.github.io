@@ -1,0 +1,22 @@
+{
+  "short_name": "Niespiet",
+  "name": "Niespiet redt het Sinterklaasfeest",
+  "description": "Een spannend nieuw avontuur van de Sint in deze moeilijke tijd",
+  "icons": [
+    {
+      "src": "fav/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "fav/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#eeeeee",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#eeeeee"
+}

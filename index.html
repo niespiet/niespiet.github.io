@@ -7,12 +7,12 @@
     <meta property="og:title" content="Niespiet redt het Sinterklaasfaast" />
     <meta property="og:description" content="Een spannend nieuw avontuur van de Sint in deze moeilijke tijd" />
     <meta property="og:image" content="niespiet.png" />
-    <meta property="og:url" content="http://niespiet.be" />
+    <meta property="og:url" content="https://niespiet.be" />
     <meta property="og:site_name" content="Niespiet" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Niespiet redt het Sinterklaasfaast" />
     <meta name="twitter:description" content="Een spannend nieuw avontuur van de Sint in deze moeilijke tijd" />
-    <meta name="twitter:image" content="http://niespiet.be/niespiet.png" />
+    <meta name="twitter:image" content="https://niespiet.be/niespiet.png" />
     <meta name="twitter:site" content="@eva.hadermann" />
     <meta name="twitter:creator" content="@eva.hadermann" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -47,8 +47,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $( document ).ready(function() {
-            $("#sintenmagie").on('click',function(){
+            $(".sintenmagie").on('click',function(){
                 document.getElementById("aclick").play();
+            });
+            $(".share-button").on('click', function() {
+                if (navigator.share) {
+            navigator.share({
+                title: 'Niespiet redt het Sinterklaasfeest',
+                url: 'https://niespiet.be'
+                }).then(() => {
+                console.log('Thanks for sharing!');
+                })
+                .catch(console.error);
+                } else {
+                    console.log('nothing...');
+                }
             });
         });
     </script>
@@ -163,7 +176,7 @@
                     extra goed te oefenen op het gooien en strooien. Ik ben er zeker van dat u daar ook weer wat fitter
                     van zal worden. Laat ons aan de kinderen vragen hun schoen binnen te laten staan, maar de wortel
                     voor het paard buiten te leggen, voor het raam of de deur. En u mag niet vergeten dat een beetje
-                    <a id="sintenmagie">Sintenmagie</a> wonderen doet.”<br> De Sint denkt even diep na. Plots zegt hij opgewekt:<br> “Je hebt
+                    <a class="sintenmagie">Sintenmagie</a> wonderen doet.”<br> De Sint denkt even diep na. Plots zegt hij opgewekt:<br> “Je hebt
                     gelijk, mijn beste Niespiet! Kom, we maken er gewoon het beste van.” </p>
                 <p>De volgende dagen klinkt er in het kasteel van de Sint veel gestommel. Het gooien van pakjes door
                     kieren gaat moeilijk. Mandarijnen ploffen uit elkaar. Koekjes vliegen in het rond.
@@ -296,7 +309,7 @@
                     moeite klimt hij langs vensterbanken en regenpijpen omhoog om zoveel mogelijk door de schoorstenen
                     naar binnen te gooien. De Sint neemt de huizen zonder schoorsteen voor zijn rekening en mikt zo goed
                     hij kan door de open ramen. Af en toe vallen de pakjes wat rommelig neer of breekt er een
-                    speculaasmannetje. Er is dit jaar ook iets meer <a id="sintenmagie">Sintenmagie</a> nodig om alles op één avond klaar te
+                    speculaasmannetje. Er is dit jaar ook iets meer <a class="sintenmagie">Sintenmagie</a> nodig om alles op één avond klaar te
                     krijgen. Maar wanneer het licht begint te worden en de eerste Sinterklaasliedjes klinken zijn de
                     Sint en Niespiet weer klaar om terug naar huis te vertrekken. </p>
             </div>
@@ -323,7 +336,7 @@
                     een plaats kon krijgen in de huidige omstandigheden. Ik ging meteen aan de slag met schrijven en
                     tekenen.</p>
                 <p>Nu we de laatste weken zoveel meer tijd doorbrengen in eigen huis, wilde ik de kamers vullen met dat
-                    ietsje meer Sinterklaassfeer. Door dit verhaal te delen via sociale media kunnen jullie me helpen om
+                    ietsje meer Sinterklaassfeer. Door dit verhaal te <a class="share-button">delen</a> via sociale media kunnen jullie me helpen om
                     nog meer kinderen te laten genieten van de belevenissen van Niespiet en de Sint.</p>
                 <p>Ben je benieuwd naar meer verhalen? Neem dan geregeld een kijkje op <a
                         href="https://www.facebook.com/eva.hadermann">Facebook</a> en <a

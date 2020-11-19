@@ -36,8 +36,8 @@
     <link rel="apple-touch-icon" href="fav/favicon-152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="fav/favicon-180.png" sizes="180x180">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PK34NGVNY"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-9PK34NGVNY'); </script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PK34NGVNY"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-9PK34NGVNY'); </script> -->
     <script>
         window.addEventListener('resize', () => {
             let vh = window.innerHeight * 0.01;
@@ -50,17 +50,27 @@
             $(".sintenmagie").on('click',function(){
                 document.getElementById("aclick").play();
             });
+
+            if (navigator.share) {
+                $("#facebook").addClass('hidden');
+                $("#twitter").addClass('hidden');
+                $("#share").removeClass('hidden');
+            } else {
+                $("a.share-button").attr('href', 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be');
+            }
+
             $(".share-button").on('click', function() {
                 if (navigator.share) {
             navigator.share({
                 title: 'Niespiet redt het Sinterklaasfeest',
-                url: 'https://niespiet.be'
+                url: 'https://niespiet.be',
+                text: 'Een spannend nieuw avontuur van de Sint'
                 }).then(() => {
                 console.log('Thanks for sharing!');
                 })
                 .catch(console.error);
                 } else {
-                    console.log('nothing...');
+                    window.location = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be";
                 }
             });
         });
@@ -71,10 +81,10 @@
 </head>
 
 <body>
-    <header> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be" title="Deel op Facebook"
-            target="_blank"><i class="fa fa-facebook"></i></a> <a
+    <header><a class="share-button hidden" id="share"><i class="fa fa-share-alt"></i></a><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be" title="Deel op Facebook"
+            target="_blank" id="facebook"><i class="fa fa-facebook"></i></a> <a
             href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fniespiet.be" title="Deel op Twitter"
-            target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/eva.hadermann/"
+            target="_blank" id="twitter"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/eva.hadermann/"
             title="Volg me op Instagram" target="_blank"><i class="fa fa-instagram"></i></a> <a
             href="https://www.buymeacoffee.com/evahadermann" target="_blank" title="Steun mijn verhalen"><img
                 src="coffee.svg" /></a> </header>
@@ -336,7 +346,9 @@
                     een plaats kon krijgen in de huidige omstandigheden. Ik ging meteen aan de slag met schrijven en
                     tekenen.</p>
                 <p>Nu we de laatste weken zoveel meer tijd doorbrengen in eigen huis, wilde ik de kamers vullen met dat
-                    ietsje meer Sinterklaassfeer. Door dit verhaal te <a class="share-button">delen</a> via sociale media kunnen jullie me helpen om
+                ietsje meer Sinterklaassfeer. Door dit verhaal te <a
+                class="share-button">delen <i class="fa fa-share-alt"></i></a> via sociale media kunnen jullie
+                me helpen om
                     nog meer kinderen te laten genieten van de belevenissen van Niespiet en de Sint.</p>
                 <p>Ben je benieuwd naar meer verhalen? Neem dan geregeld een kijkje op <a
                         href="https://www.facebook.com/eva.hadermann">Facebook</a> en <a

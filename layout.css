@@ -171,14 +171,14 @@ header img:hover {
 
 .content a:hover {
     text-shadow: 0 0 2px #cccccc;
+    cursor: pointer;
 }
 
 .epilogue a {
     font-family: "Open Sans", sans-serif;
 }
 
-.epilogue .content {
-    width: clamp(360px - 2rem, 30vw, 800px);
-    min-width: clamp(360px - 2rem, 30vw, 800px);
-    max-width: clamp(360px - 2rem, 30vw, 800px);
+.hidden {
+    visibility: hidden;
+    width: 0;
 }

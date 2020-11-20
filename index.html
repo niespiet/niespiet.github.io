@@ -23,113 +23,40 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="snowflakes.css">
-    <link rel="stylesheet" href="layout.css"> <!-- generics -->
     <link rel="icon" href="fav/favicon_32.png" sizes="32x32">
     <link rel="icon" href="fav/favicon_57.png" sizes="57x57">
     <link rel="icon" href="fav/favicon_76.png" sizes="76x76">
     <link rel="icon" href="fav/favicon_96.png" sizes="96x96">
     <link rel="icon" href="fav/favicon_128.png" sizes="128x128">
     <link rel="icon" href="fav/favicon_192.png" sizes="192x192">
-    <link rel="icon" href="fav/favicon_228.png" sizes="228x228"> <!-- Android -->
-    <link rel="shortcut icon" sizes="196x196" href=“fav/favicon_196.png"> <!-- iOS -->
+    <link rel="icon" href="fav/favicon_228.png" sizes="228x228">
+    <link rel="shortcut icon" sizes="196x196" href=“fav/favicon_196.png">
     <link rel="apple-touch-icon" href="fav/favicon_120.png" sizes="120x120">
     <link rel="apple-touch-icon" href="fav/favicon-152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="fav/favicon-180.png" sizes="180x180">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PK34NGVNY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XG0M82D32"></script>
     <!-- Add cookie consent css & js -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-data-cfasync="false"></script>
-<!-- Add google analytics -->
-<script>
-// Actually starting analytics up
-function addAnalytics() {
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-9PK34NGVNY');
-}
-
-// Waiting for the load event
-window.addEventListener("load", function () {
-    window.cookieconsent.initialise({
-        'position': 'bottom-left',
-        "palette": {
-            "popup": {
-                "background": "#dddddd",
-                "opacity": "0.5",
-                "text": "#404040"
-            },
-            "button": {
-                "background": "#8ec760",
-                "text": "#ffffff"
-            }
-        },
-        "type": "opt-in",
-        "content": {
-            "allow": "Geef me cookies",
-            "deny": "Ik lust geen cookies",
-            "message": "Deze website gebruikt Sinten-cookies om te weten wie dit vroege Sinterklaascadeau heeft ontvangen",
-            "link": "Meer weten"
-        },
-        onInitialise: function(status) {
-            if (status == cookieconsent.status.allow) addAnalytics();
-        },
-        onStatusChange: function(status) {
-            if (this.hasConsented()) addAnalytics();
-        }
-    })
-});
-</script>
-
-    <!-- <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-9PK34NGVNY'); </script> -->
-    <script>
-        window.addEventListener('resize', () => {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
-    </script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <!-- Add google analytics -->
+    <script> window.addEventListener('resize', () => { let vh = window.innerHeight * 0.01; document.documentElement.style.setProperty('--vh', `${vh}px`); }); </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $( document ).ready(function() {
-            $(".sintenmagie").on('click',function(){
-                document.getElementById("aclick").play();
-            });
-
-            $(".share-button").on('click', function() {
-                if (navigator.share) {
-            navigator.share({
-                title: 'Niespiet redt het Sinterklaasfeest',
-                url: 'https://niespiet.be',
-                text: 'Een spannend nieuw avontuur van de Sint'
-                }).then(() => {
-                console.log('Thanks for sharing!');
-                })
-                .catch(console.error);
-                } else {
-                    window.location = "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be";
-                }
-            });
-        });
-    </script>
+    <script> $(document).ready(function () { $(".sintenmagie").on('click', function () { document.getElementById("aclick").play(); }); $(".share-button").on('click', function () { if (navigator.share) { navigator.share({ title: 'Niespiet redt het Sinterklaasfeest', url: 'https://niespiet.be', text: 'Een spannend nieuw avontuur van de Sint' }).then(() => { console.log('Thanks for sharing!'); }).catch(console.error); } else { window.location = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fniespiet.be"; } }); $("#bedankt-hover").on('hover', function () { console.log('hi!'); $("#bedankt").css({ 'display': 'inline' }); }); }); </script>
     <audio id='aclick' autoPlay='false' preLoad='auto'>
-        <source src="sintenmagie.aac" type="audio/mpeg">
-    </audio>
+        <source src="sintenmagie.aac" type="audio/mpeg"> </audio>
+    <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
-    <header><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fniespiet.be" title="Deel op Facebook"
+    <header><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fniespiet.be" title="Deel op Facebook"
             target="_blank" id="facebook"><i class="fa fa-facebook"></i></a> <a
-            href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fniespiet.be" title="Deel op Twitter"
-            target="_blank" id="twitter"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/eva.hadermann/"
-            title="Volg me op Instagram" target="_blank"><i class="fa fa-instagram"></i></a> <a
-            href="https://www.buymeacoffee.com/evahadermann" target="_blank" title="Steun mijn verhalen"><img
-                src="coffee.svg" /></a> </header>
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fniespiet.be" title="Deel op Twitter"
+            target="_blank" id="twitter"><i class="fa fa-twitter"></i></a><a
+            href="https://www.instagram.com/eva.hadermann/" title="Volg me op Instagram" target="_blank"><i
+                class="fa fa-instagram"></i></a> <a href="https://www.buymeacoffee.com/evahadermann" target="_blank"
+            title="Steun mijn verhalen"><img src="coffee.svg" /></a> </header>
     <section>
         <div class="wrap">
             <div class="content">
@@ -227,9 +154,9 @@ window.addEventListener("load", function () {
                     gemopper van de Sint een beetje verwacht en zei:<br> “Lieve Sint, we hebben nog enkele dagen om
                     extra goed te oefenen op het gooien en strooien. Ik ben er zeker van dat u daar ook weer wat fitter
                     van zal worden. Laat ons aan de kinderen vragen hun schoen binnen te laten staan, maar de wortel
-                    voor het paard buiten te leggen, voor het raam of de deur. En u mag niet vergeten dat een beetje
-                    <a class="sintenmagie">Sintenmagie</a> wonderen doet.”<br> De Sint denkt even diep na. Plots zegt hij opgewekt:<br> “Je hebt
-                    gelijk, mijn beste Niespiet! Kom, we maken er gewoon het beste van.” </p>
+                    voor het paard buiten te leggen, voor het raam of de deur. En u mag niet vergeten dat een beetje <a
+                        class="sintenmagie">Sintenmagie</a> wonderen doet.”<br> De Sint denkt even diep na. Plots zegt
+                    hij opgewekt:<br> “Je hebt gelijk, mijn beste Niespiet! Kom, we maken er gewoon het beste van.” </p>
                 <p>De volgende dagen klinkt er in het kasteel van de Sint veel gestommel. Het gooien van pakjes door
                     kieren gaat moeilijk. Mandarijnen ploffen uit elkaar. Koekjes vliegen in het rond.
                     Chocolademannetjes vallen in stukken. Het hele kasteel is een puinhoop. Maar de Sint en Niespiet
@@ -253,8 +180,8 @@ window.addEventListener("load", function () {
         <div class="wrap">
             <div class="content">
                 <p><span class="firstcharacter">M</span>et nog maar enkele dagen voor het Sinterklaasfeest moeten
-                    Niespiet en Sinterklaas nu echt wel vertrekken. Ze nemen afscheid van de zieke
-                    Pieten en de Zorgpieten en beginnen aan hun lange tocht naar ons land. </p>
+                    Niespiet en Sinterklaas nu echt wel vertrekken. Ze nemen afscheid van de zieke Pieten en de
+                    Zorgpieten en beginnen aan hun lange tocht naar ons land. </p>
             </div>
             <div class="image"><img src="samen-op-de-moto.svg" class="fullwidth"></div>
         </div> <a href="#snoep-gooien" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
@@ -309,10 +236,9 @@ window.addEventListener("load", function () {
     <section id="opgesloten">
         <div class="wrap">
             <div class="content">
-                <p><span class="firstcharacter">N</span>iespiet zucht wanneer de politieagent de celdeur achter hen dichtgooit.
-                “Ik ben benieuwd wat jullie morgen te vertellen hebben, na een
-                nachtje in de gevangenis”, horen ze hem roepen. De Sint gaat
-                zitten en sluit zijn ogen.<br> “Zet je even neer,
+                <p><span class="firstcharacter">N</span>iespiet zucht wanneer de politieagent de celdeur achter hen
+                    dichtgooit. “Ik ben benieuwd wat jullie morgen te vertellen hebben, na een nachtje in de
+                    gevangenis”, horen ze hem roepen. De Sint gaat zitten en sluit zijn ogen.<br> “Zet je even neer,
                     Niespiet”, zegt de Sint kalm. Maar Niespiet loopt nerveus heen en weer. Hij weet zich helemaal geen
                     raad meer. Morgenavond moeten ze de daken al op en de pakjes zijn nog niet gesorteerd. En ook de
                     dakenkaart moet nog gecontroleerd worden. Zelfs als ze de volgende ochtend worden vrijgelaten is er
@@ -361,9 +287,10 @@ window.addEventListener("load", function () {
                     moeite klimt hij langs vensterbanken en regenpijpen omhoog om zoveel mogelijk door de schoorstenen
                     naar binnen te gooien. De Sint neemt de huizen zonder schoorsteen voor zijn rekening en mikt zo goed
                     hij kan door de open ramen. Af en toe vallen de pakjes wat rommelig neer of breekt er een
-                    speculaasmannetje. Er is dit jaar ook iets meer <a class="sintenmagie">Sintenmagie</a> nodig om alles op één avond klaar te
-                    krijgen. Maar wanneer het licht begint te worden en de eerste Sinterklaasliedjes klinken zijn de
-                    Sint en Niespiet weer klaar om terug naar huis te vertrekken. </p>
+                    speculaasmannetje. Er is dit jaar ook iets meer <a class="sintenmagie">Sintenmagie</a> nodig om
+                    alles op één avond klaar te krijgen. Maar wanneer het licht begint te worden en de eerste
+                    Sinterklaasliedjes klinken zijn de Sint en Niespiet weer klaar om terug naar huis te vertrekken.
+                </p>
             </div>
         </div> <a href="#einde" class="tonext"><i class="fa fa-arrow-circle-down"></i></a>
     </section>
@@ -388,17 +315,15 @@ window.addEventListener("load", function () {
                     een plaats kon krijgen in de huidige omstandigheden. Ik ging meteen aan de slag met schrijven en
                     tekenen.</p>
                 <p>Nu we de laatste weken zoveel meer tijd doorbrengen in eigen huis, wilde ik de kamers vullen met dat
-                ietsje meer Sinterklaassfeer. Door dit verhaal te <a
-                class="share-button">delen <i class="fa fa-share-alt"></i></a> via sociale media kunnen jullie
-                me helpen om
-                    nog meer kinderen te laten genieten van de belevenissen van Niespiet en de Sint.</p>
+                    ietsje meer Sinterklaassfeer. Door dit verhaal te <a class="share-button">delen <i
+                            class="fa fa-share-alt"></i></a> via sociale media kunnen jullie me helpen om nog meer
+                    kinderen te laten genieten van de belevenissen van Niespiet en de Sint.</p>
                 <p>Ben je benieuwd naar meer verhalen? Neem dan geregeld een kijkje op <a
                         href="https://www.facebook.com/eva.hadermann">Facebook</a> en <a
                         href="https://www.instagram.com/eva.hadermann/">Instagram</a>. Zou je de verhalen liefst in
                     boekvorm zien verschijnen? Dan kan je me <a
                         href="https://www.buymeacoffee.com/evahadermann">vrijblijvend steunen</a>. </p>
             </div>
-            <!-- <div class="content brief"> <quot> <p>Lieve Sint,</p> <p>Bedankt dat ik het verhaal van u en Niespiet mocht vertellen. Ik heb er veel plezier aan beleefd om over jullie te schrijven en te tekenen. Maar ik stond niet alleen. Ik kreeg veel hulp en steun van heel wat mensen rondom mij.</p><p> Zou u dit jaar een cadeautje willen brengen aan mijn fantastische echtgenoot Wannes Van Loock? Hij heeft echt avonden achter zijn computer doorgebracht om dit verhaal in een mooi online jasje te steken. Gooi je ook nog wat mandarijntjes in de huisjes van mijn familie en vrienden om hen te bedanken voor hun onvoorwaardelijke steun? Vooral Rita Vermant en Lester Van Loock verdienen wel wat extra snoep.</p><p>Tot slot mag je ook mijn trouwste lezers Louis en Emiel verwennen met wat lekkers, want het zijn zij die het hardste van al in mijn verhalen geloven.</p> <p>Tot volgend jaar!<br> Eva</p> </quot> </div> -->
         </div>
     </section>
     <div class="snowflakes" aria-hidden="true">

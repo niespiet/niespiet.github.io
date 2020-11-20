@@ -185,3 +185,19 @@ header img:hover {
     visibility: hidden;
     width: 0;
 }
+
+.cc-window, .cc-revoke {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7em;
+    opacity: 0.9;
+}
+
+.cc-link {
+    color: #c21212;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cc-revoke {
+    display: none;
+}

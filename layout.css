@@ -101,6 +101,10 @@ section img.fullwidth {
   max-width: clamp(360px - 2rem, 70vw, 800px);
 }
 
+.content p:first-child {
+    padding-top: 1rem;
+}
+
 section img {
   margin: auto;
 }

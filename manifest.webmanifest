@@ -4,13 +4,13 @@
   "description": "Een spannend nieuw avontuur van de Sint in deze moeilijke tijd",
   "icons": [
     {
-      "src": "fav/favicon-192.png",
+      "src": "fav/favicon_192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "fav/favicon-512.png",
+      "src": "fav/favicon_512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"

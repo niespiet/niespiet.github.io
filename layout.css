@@ -157,6 +157,9 @@ header img:hover {
 }
 
 .epilogue {
+    /* background-color: #ffc233; */
+    background-color: #d5aaaa;
+    color: #eeeeee;
     font-size: 0.7em;
     font-family: 'Open Sans', sans-serif;
 }

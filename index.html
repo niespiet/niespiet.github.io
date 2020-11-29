@@ -49,10 +49,13 @@
     <script> $(document).ready(function () { $(".sintenmagie").on('click', function () { document.getElementById("aclick").play(); }); $(".share-button").on('click', function () { if (navigator.share) { navigator.share({ title: 'Niespiet redt het Sinterklaasfeest', url: 'https://niespiet.be', text: 'Een lach en een traan in dit nieuwe Sinterklaasverhaal met Niespiet in de hoofdrol' }).then(() => { console.log('Thanks for sharing!'); }).catch(console.error); } else { window.location = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fniespiet.be"; } }); $("#bedankt-hover").on('hover', function () { console.log('hi!'); $("#bedankt").css({ 'display': 'inline' }); }); }); </script>
     <audio id='aclick' autoPlay='false' preLoad='auto'>
         <source src="sintenmagie.aac" type="audio/mpeg"> </audio>
+    <link rel="stylesheet" href="ribbon.css">
     <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
+    <a class="github-fork-ribbon left-top" href="kleurplaat.pdf" data-ribbon="Kleurwedstrijd!" title="Kleurwedstrijd!">Kleurwedstrijd!</a>
+
     <header><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fniespiet.be" title="Deel op Facebook"
             target="_blank" id="facebook"><i class="fa fa-facebook"></i></a> <a
             href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fniespiet.be" title="Deel op Twitter"

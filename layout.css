@@ -13,8 +13,9 @@ body {
 section {
   position: relative;
   width: 100%;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
+  height: fit-content;
   display: flex;
   flex-direction: column;
   font-family: "Merriweather", serif;

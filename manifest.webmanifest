@@ -19,6 +19,6 @@
   "start_url": "/",
   "background_color": "#eeeeee",
   "display": "standalone",
-  "scope": "/",
+  "scope": "https://niespiet.be/",
   "theme_color": "#eeeeee"
 }

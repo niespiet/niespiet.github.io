@@ -54,7 +54,24 @@
 </head>
 
 <body>
-    <a class="github-fork-ribbon left-top" href="https://aemail.com/68nQ?subject=Ik haal graag de avonturen van Niespiet in huis!" data-ribbon="Reserveer het boek!" title="Reserveer het boek!">Reserveer het boek!</a>
+    <a class="github-fork-ribbon left-top" onclick="openForm()" href="#" data-ribbon="Reserveer het boek!"
+        title="Reserveer het boek!"></a>
+    
+    <div class="form-popup" id="myForm">
+        <form id="orderForm"
+            action="https://docs.google.com/forms/u/0/d/16HmLvzPqR-ClfmR8Ytyoof7vJ56wJ5CDj_j8awAtTSM/formResponse?"
+            class="form-container" target="hidden_iframe" onsubmit="submitted=true;">
+            <p id="info">Laat hier het email adres achter waarop we je mogen contacteren om je reservatie te voltooien.</p>
+            <input type="email" placeholder="Email adres" name="entry.2038652308" required>
+    
+            <input type="text" name="entry.276108768" placeholder="Ik ben geen robot: 5 + 4 = " required pattern="9|negen">
+    
+            <button id="submitBtn" type="submit" class="btn" disabled>Reserveer je exemplaar</button>
+            <a href="#" id="cancel" onclick="closeForm()">&#10006;</a>
+        </form>
+        <!-- to block redirect -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+    </div>
 
     <header><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fniespiet.be" title="Deel op Facebook"
             target="_blank" id="facebook"><i class="fa fa-facebook"></i></a> <a
@@ -348,6 +365,38 @@
         <div class="snowflake"> ❆ </div>
         <div class="snowflake"> ❅ </div>
     </div>
+    
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "flex";
+          var sections = document.getElementsByTagName("section");
+          for(var i = 0; i < sections.length; i++) {
+            sections[i].style.filter = "blur(10px)";
+          }
+          var bodyRect = document.body.getBoundingClientRect();
+          console.log(document.getElementById("myForm").style.top);
+        //   document.getElementById("myForm").style.top = bodyRect.top + 0.5 * (bodyRect.bottom - bodyRect.top);
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+          var sections = document.getElementsByTagName("section");
+          for(var i = 0; i < sections.length; i++) {
+            sections[i].style.filter = "none";
+          }
+        }
+
+        const form = document.getElementById("orderForm");
+        form.addEventListener("change", () => {
+            document.getElementById('submitBtn').disabled = !form.checkValidity();
+        });
+
+        $('#myForm').on('submit', function(e) {
+          closeForm();
+        });
+        </script>
+
+        <script type="text/javascript">var submitted=false;</script>
 </body>
 
 </html>

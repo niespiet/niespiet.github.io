@@ -224,6 +224,7 @@ header img:hover {
 /* Add styles to the form container */
 .form-container {
   max-width: clamp(360px - 2rem, 70vw, 400px);
+  min-width: clamp(360px - 2rem, 70vw, 400px);
   padding: 1em;
   background-color: white;
   font-size: 0.8em;

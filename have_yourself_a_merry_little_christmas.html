@@ -13,9 +13,14 @@
     <link rel="stylesheet" href="snowflakes.css">
     <script> window.addEventListener('resize', () => { let vh = window.innerHeight * 0.01; document.documentElement.style.setProperty('--vh', `${vh}px`); }); </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <audio id='aclick' autoPlay='false' preLoad='auto'>
-        <source src="sintenmagie.aac" type="audio/mpeg"> </audio>
     <link rel="stylesheet" href="layout.css">
+    <style>
+        video {
+          /* override other styles to make responsive */
+          width: 100%    !important;
+          height: auto   !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +28,10 @@
         <div class="wrap">
             <div class="content" style="text-align: center">
                 <p>From now on our troubles will be out of sight</p>
-                <audio src="HYSAMLCHRMS geen piano.mp3" controls></audio> 
+                <video controls>
+                  <source src="https://drive.google.com/uc?export=download&id=1eu9wpqUxp8U2x6Hk1qumm5vno9bFFIL3" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
             </div>
     </section>
     <div class="snowflakes" aria-hidden="true">
